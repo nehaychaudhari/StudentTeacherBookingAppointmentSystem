@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Login and Register Form Pages */
+.Forms-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Forms {
+    font-size: 1.2em;
+    width: 500px;
+    background: rgba(218, 218, 218, 0.55);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Forms h1 {
+    text-align: center;
+    color: #055a74;
+}
+
+.Forms table {
+    width: 100%;
+}
+
+.Forms table tr td {
+    padding: 10px 0;
+}
+
+.Forms .label {
+    width: 110px;
+    font-weight: bold;
+}
+
+.Forms input,
+.Forms select {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    font-style: italic;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+}
+
+.Forms .Forms-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 50px;
+    font-weight: 900;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.Forms .Forms-btn:hover {
+    background-color: #3e8e41;
+}
+
+.links a {
+    text-decoration: none;
+    color: #055a74;
+    font-weight: bold;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.show-passwords {
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.show-passwords:hover {
+    text-decoration: underline;
+}
+
+.Forms button {
+    color: white;
+    padding: 10px 30px;
+    font-weight: 900;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: 1s;
+}
+
+.Forms button:hover {
+    box-shadow: 0 0 10px #333333;
+}
+
+/* Forgot Password Page */
+.forgot-password-container {
+    width: 500px;
+    margin: auto;
+}

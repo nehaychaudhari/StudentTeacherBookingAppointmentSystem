@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login | Student Teacher Booking Appointment System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="Forms-body"
+    style="background-image: url(https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+    <div class="login-container">
+        <form id="loginForm" class="Forms">
+            <h1>Teacher Login</h1>
+            <table>
+                <tr>
+                    <td class="label"><label for="loginemail">Email Id:</label></td>
+                    <td><input type="email" id="loginemail" placeholder="Enter Your Email Id" required></td>
+                </tr>
+                <tr>
+                    <td class="label"><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" placeholder="Enter Your Password" required></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;" colspan="2">
+                        <button type="button" id="ShowPasswords" value="Show Passwords" class="show-passwords"
+                            onclick="TogglePasswordVisibility()">Show Passwords</button><br><br>
+                        <button type="submit" id="loginbtn" class="Forms-btn">Login</button>
+                        <div class="links"><br>
+                            <span><a href="index.html">Back to Home</a></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+    <script type="module" src="js/teacherlogin.js"></script>
+</body>
+
+</html>

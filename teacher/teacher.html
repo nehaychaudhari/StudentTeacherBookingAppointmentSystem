@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard | Student Teacher Booking Appointment System</title>
+    <link rel="stylesheet" href="css/teacher.css">
+</head>
+
+<body
+    style="background-image: url('https://plus.unsplash.com/premium_photo-1680807869780-e0876a6f3cd5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNjaG9vbHxlbnwwfHwwfHx8MA%3D%3D');">
+    <div class="teacher-container">
+        <div class="navbar">
+            <a href="#schedule">Schedule Appointment</a>
+            <a href="#approve">Approve/cancel Appointment </a>
+            <a href="#appointments">View Appointments</a>
+            <a href="#" onclick="logout()">LOGOUT</a>
+        </div>
+
+        <div id="content" class="content">
+            <h1>Teacher Dashboard</h1>
+            <h2>Welcome, <span id="loggedInTeacherEmail"></span> </h2>
+
+            <section id="schedule" class="schedule section">
+                <h3>Schedule an Appointment</h3>
+                <div class="appointform">
+                    <label for="student-name">Student Name</label>
+                    <input type="text" id="student-name" placeholder="Student Name">
+                    <label for="appointment-date">Select Date</label>
+                    <input type="date" id="appointment-date">
+                    <label for="appointment-time">Select Time</label>
+                    <input type="time" id="appointment-time">
+                    <button id="schedule-btn" class="schedule-btn">Schedule</button>
+                </div>
+            </section>
+
+            <section id="approve" class="approve section">
+                <h3>Appointments Calendar - March</h3>
+                <table class="appointmentsTable">
+                    <thead>
+                        <tr>
+                            <td>No.</td>
+                            <td>Student Name</td>
+                            <td>Date and Time</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody id="appointments-list tbody">
+                        <!-- Calendar Days will be generated here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="appointments" class="section">
+                <table class="ViewAppointments" id="appointments-list" border="1">
+                    <h3>Student Appointments Table</h3>
+                    <thead>
+                        <tr>
+                            <td>No.</td>
+                            <td>Student Name</td>
+                            <td>Student Email</td>
+                            <td>View Messages</td>
+                        </tr>
+                    </thead>
+                    <tbody id="StudentTableBody"><!-- Dynamic Data --></tbody>
+                </table>
+                <!-- Chat Modal -->
+                <div id="chatModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeChat()">&times;</span>
+                        <h2 id="chatStudentName"></h2>
+                        <div id="chatMessages" class="chat-messages"></div>
+                        <input type="text" id="chatInput" class="typeMessage" placeholder="Type a message..." />
+                        <button id="sendMessageBtn" class="sendbtn" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script type="module" src="js/teacher.js"></script>
+</body>
+
+</html>

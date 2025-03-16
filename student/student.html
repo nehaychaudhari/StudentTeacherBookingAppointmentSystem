@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | Student Teacher Booking Appointment System</title>
+    <link rel="stylesheet" href="css/student.css">
+</head>
+
+<body
+    style="background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2Nob29sfGVufDB8fDB8fHww');">
+    <div class="teacher-container">
+        <div class="navbar">
+            <h1>Student Dashboard</h1>
+            <a href="#" onclick="logout()">LOGOUT</a>
+        </div>
+
+        <div id="content" class="content">
+            <h2>Welcome, <span id="loggedInUserEmail"></span></h2>
+            <input type="text" id="searchBar" class="searchbar" placeholder="Search..." onkeyup="searches()">
+            <table class="teacherDetail" border="1">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Subject</th>
+                        <th>Chat</th>
+                    </tr>
+                </thead>
+                <tbody id="teacherTableBody"><!-- Dynamic Data --></tbody>
+            </table>
+            <div id="pagination"></div>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeChat()">&times;</span>
+            <h2 id="chatTeacherName"></h2>
+            <div id="chatMessages" class="chat-messages"></div>
+            <input type="text" id="chatInput" class="typeMessage" placeholder="Type a message..." />
+            <button id="sendMessageBtn" class="sendbtn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script type="module" src="js/studentmodule.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.admin-container {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+/* Header */
+.navbar {
+    display: flex;
+    background-color: #00000057;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #ffffff;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    transition: 1s;
+}
+
+.navbar a:hover {
+    box-shadow: 0 0 10px #333333;
+}
+
+.navbar a.active {
+    background-color: #00a500;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 900;
+    padding: 5px 0px 5px 10px;
+    background-color: #00000057;
+    transition: 1s;
+}
+
+.menu-icon:hover {
+    color: #000000;
+}
+
+/* Sidebar */
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #00000095;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.sidebar a {
+    display: block;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #242424;
+}
+
+.close-btn {
+    color: #ffffff;
+    cursor: pointer;
+    float: right;
+    font-size: 2rem;
+    font-weight: 900;
+    transition: 1s;
+}
+
+.close-btn:hover {
+    color: #ff5e00;
+}
+
+/* Main Content */
+.content {
+    position: absolute;
+    height: 88vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.content h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* Manage Teacher */
+.ManageTeacherForm {
+    font-size: 1.2em;
+    width: 500px;
+}
+
+.ManageTeacherForm table {
+    width: 100%;
+}
+
+.ManageTeacherForm table tr td {
+    padding: 5px 0;
+}
+
+.ManageTeacherForm label {
+    font-weight: bold;
+}
+
+.ManageTeacherForm input,
+.ManageTeacherForm select {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    font-style: italic;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+}
+
+button {
+    color: white;
+    padding: 10px 30px;
+    font-weight: 900;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: 1s;
+}
+
+button:hover {
+    box-shadow: 0 0 10px #333333;
+}
+
+.greenbtn,
+.approve-btn {
+    background-color: #4CAF50;
+}
+
+.greenbtn:hover,
+.approve-btn:hover {
+    background-color: #3e8e41;
+}
+
+.infobtn {
+    background-color: #17a2b8;
+}
+
+.infobtn:hover {
+    background-color: #0e6a78;
+}
+
+.yellowbtn {
+    background-color: #ffc107;
+}
+
+.yellowbtn:hover {
+    background-color: #ce9a00;
+}
+
+.redbtn,
+.delete-btn {
+    background-color: #f60f0f;
+}
+
+.redbtn:hover,
+.delete-btn:hover {
+    background-color: #b52400;
+}
+
+.primarybtn {
+    background-color: #403434;
+}
+
+.primarybtn:hover {
+    background-color: #000000;
+}
+
+.show-passwords {
+    background-color: transparent;
+    color: #000000;
+}
+
+.show-passwords:hover {
+    text-decoration: underline;
+}
+
+/* Teacher Data */
+.TeachersDetail,
+.ManageStudent {
+    width: 99vw;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.TeachersDetail tr td,
+.ManageStudent tr td {
+    height: 2rem;
+}
+
+/* CSS for modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media Query for responsive design */
+@media screen and (max-width: 800px) {
+    .navbar {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .content {
+        justify-content: left;
+    }
+
+    .TeachersDetail,
+    .ManageStudent {
+        width: 800px;
+        overflow: scroll;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ManageTeacherForm {
+        width: 100%;
+    }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Student Teacher Booking Appointment System</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body
+    style="background-image: url(https://plus.unsplash.com/premium_photo-1664110691109-6558cb5ea476?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+    <div class="admin-container">
+        <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+        <div class="navbar">
+            <h1>Admin Dashboard</h1>
+            <a href="#" class="active" onclick="showSection('ManageTeacher')">Manage Teacher</a>
+            <a href="#" onclick="showSection('TeachersDetail')">Teacher Details</a>
+            <a href="#" onclick="showSection('manageStudent')">Manage Student</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <span class="close-btn" onclick="toggleSidebar()">X</span>
+            <a href="#" onclick="showSection('ManageTeacher')">Manage Teacher</a>
+            <a href="#" onclick="showSection('TeachersDetail')">Teacher Datails</a>
+            <a href="#" onclick="showSection('manageStudent')">Manage Student</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+
+        <div id="content" class="content">
+            <div id="ManageTeacher" class="section">
+                <h1>Manage Teacher</h1>
+                <form id="ManageTeacherForm" class="ManageTeacherForm">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="name">Name:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="name" autocomplete="on" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="department">Department:</label>
+                            </td>
+                            <td>
+                                <select id="department" required>
+                                    <option value="">Select Department</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="subject">Subject:</label>
+                            </td>
+                            <td>
+                                <select id="subject" required>
+                                    <option value="">Select Subject</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="email">Email ID:</label>
+                            </td>
+                            <td>
+                                <input type="email" id="email" autocomplete="on" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="password">Password:</label>
+                            </td>
+                            <td>
+                                <input type="password" id="password" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <button type="reset" class="primarybtn">Reset</button>
+                                <button type="button" id="ShowPasswords" value="Show Passwords" class="show-passwords"
+                                    onclick="TogglePasswordVisibility()">
+                                    Show Passwords
+                                </button>
+                                <button type="submit" class="greenbtn">Add</button>
+                                <button type="button" id="retrievebtn" class="infobtn">Retrieve</button>
+                                <button type="button" id="updatebtn" class="yellowbtn">Update</button>
+                                <button type="button" id="deletebtn" class="redbtn">Delete</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div id="TeachersDetail" class="section" style="display:none;">
+                <h1>Teacher Data</h1>
+                <table class="TeachersDetail" border="1">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Subject</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teacherTableBody"><!-- Dynamic Data --></tbody>
+                </table>
+            </div>
+            <div id="manageStudent" class="section" style="display:none;">
+                <h1>Student Data Approval Table </h1>
+                <table class="ManageStudent" border="1">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="StudentTableBody">
+                        <!-- Student data will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/admin.js"></script>
+    <script type="module" src="js/adminmodule.js"></script>
+</body>
+
+</html>
